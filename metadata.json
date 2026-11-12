@@ -1,0 +1,6 @@
+{
+  "name": "Sudoku Master",
+  "description": "Clean, modern Sudoku puzzle game with Light, Dark, and AMOLED themes, SQLite database tracking, completion time history graphs, daily progress statistics, and customizable assistance rules.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
