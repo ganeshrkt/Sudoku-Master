@@ -21,12 +21,11 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Accept SDK Licenses and Build
+      - name: Generate Wrapper and Build
         run: |
-          yes | sdkmanager --licenses || true
           gradle wrapper
           chmod +x gradlew
-          ./gradlew assembleDebug --stacktrace
+          ./gradlew assembleDebug -Djava.awt.headless=true --stacktrace
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
