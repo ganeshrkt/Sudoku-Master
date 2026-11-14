@@ -202,23 +202,22 @@ fun GameScreen(
 
                 Spacer(modifier = Modifier.height(12.dp))
 
-                // Control Action Buttons (Undo, Erase, Notes, Mode, Hint)
+                // Control Action Buttons (Undo, Notes, Mode, Hint)
                 GameControlsBar(
                     canUndo = uiState.canUndo,
                     undoCount = uiState.undoCount,
                     isPencilMode = uiState.isPencilMode,
                     isDigitFirstMode = uiState.isDigitFirstMode,
                     onUndoClick = { gameViewModel.undo() },
-                    onEraseClick = { gameViewModel.eraseCell() },
                     onPencilToggle = { gameViewModel.togglePencilMode() },
                     onHintClick = { gameViewModel.requestHint() },
                     onDigitFirstToggle = { gameViewModel.toggleDigitFirstMode() },
                     modifier = Modifier.widthIn(max = 480.dp)
                 )
 
-                Spacer(modifier = Modifier.height(12.dp))
+                Spacer(modifier = Modifier.height(14.dp))
 
-                // Number Pad with 1-9 count badges
+                // 2x5 Number Pad (1-9 + Erase)
                 val countsMap = (1..9).associateWith { digit ->
                     uiState.cells.count { it.value == digit }
                 }
@@ -227,6 +226,7 @@ fun GameScreen(
                     activeDigit = uiState.activeDigit,
                     isDigitFirstMode = uiState.isDigitFirstMode,
                     onDigitClick = { gameViewModel.onDigitPadClick(it) },
+                    onEraseClick = { gameViewModel.eraseCell() },
                     modifier = Modifier.widthIn(max = 480.dp)
                 )
 

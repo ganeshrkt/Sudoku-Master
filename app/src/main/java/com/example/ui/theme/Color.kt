@@ -73,7 +73,7 @@ val LightBoardColors = SudokuBoardColors(
     userNumberColor = Color(0xFF2563EB),
     errorNumberColor = Color(0xFFDC2626),
     noteColor = Color(0xFF64748B),
-    numberPadBackground = Color(0xFFF1F5F9),
+    numberPadBackground = Color(0xFFE2E8F0),
     numberPadText = Color(0xFF0F172A)
 )
 
@@ -107,6 +107,6 @@ val AmoledBoardColors = SudokuBoardColors(
     userNumberColor = Color(0xFF60A5FA),
     errorNumberColor = Color(0xFFEF4444),
     noteColor = Color(0xFFA3A3A3),
-    numberPadBackground = Color(0xFF171717),
+    numberPadBackground = Color(0xFF262626),
     numberPadText = Color(0xFFFFFFFF)
 )

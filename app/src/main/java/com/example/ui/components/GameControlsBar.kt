@@ -15,7 +15,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Undo
 import androidx.compose.material.icons.filled.AutoAwesome
-import androidx.compose.material.icons.filled.Backspace
 import androidx.compose.material.icons.filled.Create
 import androidx.compose.material.icons.filled.TouchApp
 import androidx.compose.material3.Badge
@@ -41,7 +40,6 @@ fun GameControlsBar(
     isPencilMode: Boolean,
     isDigitFirstMode: Boolean,
     onUndoClick: () -> Unit,
-    onEraseClick: () -> Unit,
     onPencilToggle: () -> Unit,
     onHintClick: () -> Unit,
     onDigitFirstToggle: () -> Unit,
@@ -62,15 +60,6 @@ fun GameControlsBar(
             badge = if (canUndo && undoCount > 0) undoCount.toString() else null,
             onClick = onUndoClick,
             testTag = "control_undo"
-        )
-
-        // Erase
-        ControlButton(
-            icon = Icons.Default.Backspace,
-            label = "Erase",
-            enabled = true,
-            onClick = onEraseClick,
-            testTag = "control_erase"
         )
 
         // Pencil Notes
